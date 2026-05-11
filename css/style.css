@@ -1300,3 +1300,308 @@ span#nav-close {
         margin-bottom: 15px;
     }
 }
+
+
+/* ========================================================================
+   TIMELINE EXPERIENCE SECTION - 2026 Update
+   ======================================================================== */
+
+.experience-area {
+    background: #121d30;
+}
+
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+/* Timeline vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #f8494c 0%, rgba(248, 73, 76, 0.3) 100%);
+    top: 0;
+}
+
+/* Timeline Items */
+.timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+    width: calc(50% - 40px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+    margin-right: 0;
+    width: calc(50% - 40px);
+    text-align: left;
+}
+
+/* Timeline Marker */
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #f8494c 0%, #ff6b70 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #fff;
+    z-index: 10;
+    box-shadow: 0 0 0 4px #121d30, 0 0 20px rgba(248, 73, 76, 0.4);
+    transition: all 0.3s ease;
+    top: 0;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: translateX(-50%) scale(1.15);
+    box-shadow: 0 0 0 4px #121d30, 0 0 30px rgba(248, 73, 76, 0.6);
+}
+
+/* Timeline Content */
+.timeline-content {
+    background: linear-gradient(135deg, #1a2a3a 0%, #0f1820 100%);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #f8494c;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    border-left: none;
+    border-right: 4px solid #f8494c;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(248, 73, 76, 0.3);
+    border-color: #ff6b70;
+}
+
+.timeline-item:nth-child(even) .timeline-content:hover {
+    border-right-color: #ff6b70;
+}
+
+/* Timeline Content Title */
+.timeline-content h3 {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+    text-transform: none;
+}
+
+/* Timeline Date */
+.timeline-date {
+    color: #f8494c;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+    justify-content: flex-end;
+}
+
+/* Timeline Company */
+.timeline-company {
+    color: #a8a6a9;
+    font-size: 14px;
+    margin: 8px 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timeline-item:nth-child(odd) .timeline-company {
+    justify-content: flex-end;
+}
+
+/* Timeline Achievements */
+.timeline-achievements {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.timeline-achievements li {
+    color: #c2c0c3;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.timeline-achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #f8494c;
+    font-weight: bold;
+}
+
+/* Tech Tags */
+.timeline-tech {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.timeline-item:nth-child(odd) .timeline-tech {
+    justify-content: flex-end;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: rgba(248, 73, 76, 0.15);
+    color: #f8494c;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(248, 73, 76, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(248, 73, 76, 0.25);
+    border-color: #f8494c;
+    transform: scale(1.05);
+}
+
+/* Responsive Timeline */
+@media (max-width: 992px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 100px;
+        margin-right: 0;
+        width: calc(100% - 100px);
+        text-align: left;
+    }
+
+    .timeline-marker {
+        left: 30px;
+    }
+
+    .timeline-content {
+        border-left: 4px solid #f8494c;
+        border-right: none;
+    }
+
+    .timeline-date,
+    .timeline-company,
+    .timeline-tech {
+        justify-content: flex-start !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-marker {
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .timeline-content h3 {
+        font-size: 20px;
+    }
+
+    .timeline-achievements li {
+        font-size: 13px;
+    }
+
+    .tech-tag {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline {
+        padding: 20px 0;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-marker {
+        left: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+
+    .timeline-date,
+    .timeline-company {
+        font-size: 12px;
+    }
+
+    .timeline-achievements li {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .timeline-tech {
+        gap: 6px;
+    }
+
+    .tech-tag {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
